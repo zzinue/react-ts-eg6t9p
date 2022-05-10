@@ -68,3 +68,22 @@ body {
     cursor: pointer;
   }
 }
+.Error {
+  border: 1px solid red;
+  &:focus {
+    border: 1px solid red;
+  }
+  &:active {
+    border: 1px solid red;
+  }
+}
+
+.Ok {
+  border: 1px solid green;
+  &:focus {
+    border: 1px solid green;
+  }
+  &:active {
+    border: 1px solid green;
+  }
+}

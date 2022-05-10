@@ -3,7 +3,7 @@ import './style.scss';
 
 export default function App() {
   return (
-    <div>
+    <div className="App">
       <h1>Registro </h1>
       <InputControlado />
     </div>
@@ -27,8 +27,8 @@ const Style = {
 
 const InputControlado = () => {
   const [Name, setName] = React.useState(null);
-  const [ErrorMessage, setErrorMessage] = React.useState('');
-  const [Password, setPassword] = React.useState({
+  const [Password, setPassword] = React.useState(0);
+  const [ErrorMessage, setErrorMessage] = React.useState({
     Message: '',
     Type: '',
     Class: '',
@@ -68,7 +68,11 @@ const InputControlado = () => {
         }}
       />
       <p className="ErrorMessage">{ErrorMessage.Message}</p>
-      <button onClick={handleInfo}>Show</button>
+      {
+        <button onClick={handleInfo} disabled>
+          Show
+        </button>
+      }
     </div>
   );
 };
