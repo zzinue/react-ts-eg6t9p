@@ -43,6 +43,7 @@ const InputControlado = () => {
         placeholder="Nombre"
         onChange={({ target }) => {
           setName(target.value);
+          console.log(setName(target.value));
           {
             target.value.length < 3
               ? setErrorMessage({
@@ -56,23 +57,31 @@ const InputControlado = () => {
       />
       <p>{Error}</p>
       <input
+        className={ErrorMessage.Class2}
         type="password"
         placeholder="password"
         onChange={({ target }) => {
+          console.log(setPassword(target.value));
           setPassword(target.value);
           {
             target.value.length < 8
-              ? setErrorMessage('Contraseña muy corta')
-              : setErrorMessage('');
+              ? setErrorMessage({
+                  ...ErrorMessage,
+                  Message: 'Contraseña muy corta',
+                  Class2: 'Error',
+                })
+              : setErrorMessage({ ...ErrorMessage, Message: '', Class2: 'Ok' });
           }
         }}
       />
       <p className="ErrorMessage">{ErrorMessage.Message}</p>
-      {
-        <button onClick={handleInfo} disabled>
-          Show
-        </button>
-      }
+      {/*   {
+        <button 
+        onClick={handleInfo}
+        disabled={Error===setName(target.value) && Password!==setPassword(target.value)?false:true} >
+          Show </button>
+        
+      } */}
     </div>
   );
 };
