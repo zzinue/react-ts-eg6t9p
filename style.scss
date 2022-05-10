@@ -1,19 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,100&display=swap');
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
- font-family: 'Raleway', sans-serif;;
-  background-color: rgb(61, 35, 35);
-  background-image: url('https://raw.githubusercontent.com/koolkishan/react-glassmorphism-login-form/master/src/background.jpg');
+body {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(#22c1c3, #8e2dfd);
+  backdrop-filter: blur(1.5px);
   background-size: conver;
   display: flex;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
   height: 100vh;
   width: 100vw;
-  backdrop-filter: blur(8.5px);
+  letter-spacing: 0.4rem;
+  h1 {
+    margin: 0 0 5rem 0;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+  }
+  input {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 80%;
+    height: 3rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    color: #3c354e;
+    font-size: 1rem;
+    font-weight: bold;
+    &:focus {
+      display: inline-block;
+      box-shadow: 0 0 0 0.2rem #b9abe0;
+      backdrop-filter: blur(12rem);
+      border-radius: 2rem;
+    }
+    &::placeholder {
+      color: #3c354e;
+      font-weight: 50;
+      font-size: 0.8rem;
+    }
+  }
+  button {
+    margin: 1rem 0 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #14163c, #03217b 79%);
+    letter-spacing: 0.2rem;
+    width: 50%;
+    height: 3rem;
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
 }

@@ -1,8 +1,6 @@
 import React, { createRef } from 'react';
 import './style.scss';
 
-
-
 export default function App() {
   return (
     <div>
@@ -43,7 +41,6 @@ const InputControlado = () => {
         className={ErrorMessage.Class}
         type="text"
         placeholder="Nombre"
-        style={Name?.length >= 3 ? Style.Ok : Style.Error}
         onChange={({ target }) => {
           setName(target.value);
           {
@@ -59,7 +56,6 @@ const InputControlado = () => {
       />
       <p>{Error}</p>
       <input
-        style={Password?.length >= 8 ? Style.Ok : Style.Error}
         type="password"
         placeholder="password"
         onChange={({ target }) => {
@@ -72,7 +68,7 @@ const InputControlado = () => {
         }}
       />
       <p className="ErrorMessage">{ErrorMessage.Message}</p>
-      <button onClick={handleInfo}>show</button>
+      <button onClick={handleInfo}>Show</button>
     </div>
   );
 };
