@@ -28,6 +28,7 @@ const Style = {
 const InputControlado = () => {
   const [Name, setName] = React.useState(null);
   const [Password, setPassword] = React.useState(0);
+  const [enableButton, setEnableButton]=React.useState(false)
   const [ErrorMessage, setErrorMessage] = React.useState({
     Message: '',
     Type: '',
@@ -35,15 +36,15 @@ const InputControlado = () => {
   });
 
   const handleInfo = (e) => {};
-  return (
+return (
     <div>
       <input
         className={ErrorMessage.Class}
         type="text"
         placeholder="Nombre"
         onChange={({ target }) => {
+          console.log(target.value);
           setName(target.value);
-          console.log(setName(target.value));
           {
             target.value.length < 3
               ? setErrorMessage({
@@ -61,7 +62,7 @@ const InputControlado = () => {
         type="password"
         placeholder="password"
         onChange={({ target }) => {
-          console.log(setPassword(target.value));
+          console.log(target.value);
           setPassword(target.value);
           {
             target.value.length < 8
@@ -75,13 +76,8 @@ const InputControlado = () => {
         }}
       />
       <p className="ErrorMessage">{ErrorMessage.Message}</p>
-      {/*   {
-        <button 
-        onClick={handleInfo}
-        disabled={Error===setName(target.value) && Password!==setPassword(target.value)?false:true} >
-          Show </button>
-        
-      } */}
+         
+      <button disabled= {!enableButton}>Show</button>
     </div>
   );
 };
