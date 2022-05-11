@@ -28,13 +28,19 @@ const Style = {
 const InputControlado = () => {
   const [Name, setName] = React.useState(null);
   const [Password, setPassword] = React.useState(0);
-  const [enableButton, setEnableButton]=React.useState(false)
+  const [enableButton, setEnableButton]=React.useState(true)
   const [ErrorMessage, setErrorMessage] = React.useState({
-    Message: '',
+    Message: null,
     Type: '',
     Class: '',
   });
 
+  const isEnnabled=()=>{
+    if(ErrorMessage.Message== 'Nombre muy Corto'|| ErrorMessage.Message==null || ErrorMessage.Message=='Contraseña muy corta') {setEnableButton(true); return true}
+    else{
+      setEnableButton(false); return false
+    }
+  }
   const handleInfo = (e) => {};
 return (
     <div>
@@ -51,7 +57,7 @@ return (
                   ...ErrorMessage,
                   Message: 'Nombre muy Corto',
                   Class: 'Error',
-                })
+                }) 
               : setErrorMessage({ ...ErrorMessage, Message: '', Class: 'Ok' });
           }
         }}
@@ -77,7 +83,7 @@ return (
       />
       <p className="ErrorMessage">{ErrorMessage.Message}</p>
          
-      <button disabled= {!enableButton}>Show</button>
+      <button disabled= {isEnnabled()}>Show</button>
     </div>
   );
 };
